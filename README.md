@@ -12,6 +12,6 @@ LOGIC
 
 
 
-In the future I wil make this script more generic so it is easier to use and setup and also easier to reuse for other projects. But at first I will refactor it 
+In the future I wil make this script more generic so it is easier to use and setup and also easier to reuse for other projects. But at first I will refactor the logic to make it faster.
  
 
