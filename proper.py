@@ -6,12 +6,10 @@ import subprocess
 # VARIABLES to set
 
 working_dir_path = '/Users/salenz/git/triumph/demandware-frontend/cartridges/triumph_storefront/cartridge/templates/resources'
-not_search_cartridge = 'sloggi_storefront'
+excluded_cartridge_paths = ['.DS_Store', 'sloggi_storefront', 'bc_serviceframework', 'sitegenesis_core', 'sitegenesis_pipelines']
 country_codes = ['de', 'de_CH', 'de_AT', 'fr', 'fr_CH', 'fr_BE', 'sv', 'pl_PL', 'nl', 'nl_BE', 'it_IT', 'it_CH', 'da', 'fi', 'en', 'en_GB']
 
 logfile = open('/Users/salenz/git/triumph/demandware-frontend/properpy_log/log.txt', 'w')
-
-
 
 # FUNCTIONS
 
@@ -61,7 +59,6 @@ def find_unreferenced_keys(property_keys):
 def is_key_referenced(property_key):
     # search for a specific property_key in all files in all cartridges
     search_path = '/Users/salenz/git/triumph/demandware-frontend/cartridges/'
-    excluded_cartridge_paths = [not_search_cartridge, '.DS_Store', 'bc_serviceframework']
     working_cartridge_paths = os.listdir(search_path)
     for excluded_cartridge_path in excluded_cartridge_paths:
         working_cartridge_paths = [cartridge_path for cartridge_path in working_cartridge_paths if excluded_cartridge_path not in cartridge_path]
